@@ -33,14 +33,14 @@
   var sceneNameElement = document.querySelector('#titleBar .sceneName');
 
   // JP.PELLETIER - MODIFICATION
-  // Implementing Coach - 1/8
-  // Selecting coach div
+  // Implement Coach addon - 1/7
+  // Select coach div
   // ADD :
   var coachElement = document.querySelector('#coach-container .coach');
 
   // JP.PELLETIER - MODIFICATION
-  // Implementing Coach - 2/8
-  // Selecting message div
+  // Implement Coach addon - 2/7
+  // Select message div
   // ADD :
   var MessageElement = document.querySelector('#message .tip');
 
@@ -111,7 +111,7 @@
     // Create link hotspots.
 
     // JP.PELLETIER - MODIFICATION
-    // Sticking link hotspots icons on background - 1/1
+    // Stick link hotspots icons on background - 1/1
     // REPLACED :
 
     // data.linkHotspots.forEach(function(hotspot) {
@@ -132,7 +132,7 @@
     // End.
 
     // JP.PELLETIER - MODIFICATION
-    // Sticking info hotspots icons on background - 1/1
+    // Stick info hotspots icons on background - 1/1
     // linked with css class .link-hotspot
     // REPLACED :
 
@@ -241,7 +241,7 @@
     scene.scene.switchTo();
 
     // JP.PELLETIER - MODIFICATION
-    // Adding a delay for starting Autorotate when entering a new scene.
+    // Add a delay for starting Autorotate when entering a new scene.
     // Modification 1/1.
     // REPLACED :
 
@@ -258,15 +258,15 @@
     updateSceneName(scene);
 
     // JP.PELLETIER - MODIFICATION
-    // Implementing Coach - 3/8
-    // Updating coach for each scene
+    // Implement Coach addon - 3/7
+    // Update Coach for each scene
     // ADD :
     updateCoach(scene);
     // End.
 
     // JP.PELLETIER - MODIFICATION
-    // Implementing Coach - 4/8
-    // Updating message for each scene
+    // Implement Coach addon - 4/7
+    // Update Message for each scene
     // ADD :
     updateMessage(scene);
     // End.
@@ -279,8 +279,8 @@
   }
 
   // JP.PELLETIER - MODIFICATION
-  // Implementing Coach - 5/8
-  // Inserting HTML content from data.js in coach div
+  // Implement Coach addon - 5/7
+  // Insert HTML content from data.js in Coach div
   // ADD :
   function updateCoach(scene) {
     coachElement.innerHTML = "<img src=\"./img/coaches/" + scene.data.coach + "\">";
@@ -288,8 +288,8 @@
   // End.
 
   // JP.PELLETIER - MODIFICATION
-  // Implementing Coach - 6/8
-  // Inserting HTML content from data.js in message div
+  // Implement Coach addon - 6/7
+  // Insert HTML content from data.js in Message div
   // ADD :
   function updateMessage(scene) {
     MessageElement.innerHTML = scene.data.text;
@@ -308,7 +308,7 @@
   }
 
   // JP.PELLETIER - MODIFICATION
-  // Hiding Scene Liste at startup
+  // Hide Scene Liste at startup
   // Modification 1/1
   // REPLACED :
 
@@ -452,30 +452,6 @@
     title.classList.add('info-hotspot-title');
     title.innerHTML = hotspot.title;
     titleWrapper.appendChild(title);
-
-    // JP.PELLETIER - MODIFICATION
-    // Implementing Coach - 7/8
-    // Creating Coach element.
-    // ADD :
-    var coachWrapper = document.createElement('div');
-    coachWrapper.classList.add('info-hotspot-title-wrapper');
-    var coach = document.createElement('div');
-    coach.classList.add('info-hotspot-title');
-    coach.innerHTML = hotspot.coach;
-    coachWrapper.appendChild(coach);
-    // End.
-
-    // JP.PELLETIER - MODIFICATION
-    // Implementing Coach - 8/8
-    // Creating Message element.
-    // ADD :
-    var messWrapper = document.createElement('div');
-    messWrapper.classList.add('tip');
-    var mess = document.createElement('div');
-    mess.classList.add('tip');
-    mess.innerHTML = hotspot.mess;
-    messWrapper.appendChild(mess);
-    // End.
   
     // Create close element.
     var closeWrapper = document.createElement('div');
@@ -521,6 +497,28 @@
     stopTouchAndScrollEventPropagation(wrapper);
 
     return wrapper;
+  }
+
+  // JP.PELLETIER - MODIFICATION
+  // Implement Coach addon - 7/7
+  // Create Coach and Message elements.
+  // ADD :
+
+  function createCoachElement(item) {
+
+    var coachWrapper = document.createElement('div');
+    var coach = document.createElement('div');
+    coach.innerHTML = item.coach;
+    coachWrapper.appendChild(coach);
+
+    var messWrapper = document.createElement('div');
+    messWrapper.classList.add('tip');
+    var mess = document.createElement('div');
+    mess.classList.add('tip');
+    mess.innerHTML = item.mess;
+    messWrapper.appendChild(mess);
+    
+    return coachwrapper;
   }
 
   // Prevent touch and scroll events from reaching the parent element.

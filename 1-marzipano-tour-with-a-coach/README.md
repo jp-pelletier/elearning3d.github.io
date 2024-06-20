@@ -9,7 +9,6 @@
 ### This repository contains two addons for MARZIPANO :
 1. Implement a Coach.
 2. Skin MARZIPANO
-<br>
 
 ---
 

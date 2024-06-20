@@ -10,6 +10,7 @@
 1. Implement a Coach.
 2. Skin MARZIPANO
 <br>
+
 ### This is exercise No. 1/3 to begin and familiarize yourself with MARZIPANO API coding.
 ---
 

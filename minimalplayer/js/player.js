@@ -1,6 +1,6 @@
 const videoPlayer = document.querySelectorAll('.video-player')
 
-videoPlayer.forEach(function (item) {
+videoPlayer.forEach( (item) => {
 
   const video = item.querySelector('.video')
   const playButton = item.querySelector('.play-button')
